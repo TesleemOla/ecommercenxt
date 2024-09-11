@@ -5,7 +5,7 @@ import { Actions } from '../_Context/Notifications/Actions'
 
 
 const Page = () => {
-  const {state, dispatch} = useNotification()
+  const {dispatch} = useNotification()
   const action = Actions(dispatch)
   return (<>
     <div>User</div>
