@@ -1,57 +1,59 @@
+import { createContext, ReactNode, Dispatch, useReducer } from "react";
 
-import { createContext, ReactNode, useContext, useReducer } from "react";
+// Define the notification type
+export type Notification = {
+    message: string;
+    toastStatus: "success" | "error" | "warning" | "info" | '';
+    isOpen: boolean;
+};
 
+// Define the actions type
+export type ACTIONS =
+    | { type: "OPEN"; payload: Notification }
+    | { type: "CLOSE" };
 
-
-export type notification ={
-    message: string,
-    toastStatus: "success" | "error" | "warning" | "info" | '',
-    isOpen: boolean
-}
-
-export type ACTIONS = 
-    | {type: "OPEN" ; payload: typeof initialState} |
-    {type: "CLOSE" }
-
-const initialState:notification ={
+// Initial state
+const initialState: Notification = {
     message: "",
     toastStatus: "",
     isOpen: false
-}
+};
 
-// const NotificationContext = createContext({})
-export const NotificationContext = createContext({});
+// Define the context type
+type NotificationContextType = {
+    state: Notification;
+    dispatch: Dispatch<ACTIONS>;
+};
 
+// Create the context with the correct type
+export const NotificationContext = createContext<NotificationContextType | undefined>(undefined);
 
-const notificationReducer=(state, action:ACTIONS)=>{
+// Reducer function
+const notificationReducer = (state: Notification, action: ACTIONS): Notification => {
     switch (action.type) {
         case 'OPEN':
             return {
                 ...state,
                 ...action.payload
-            }
+            };
         case 'CLOSE':
             return {
                 ...state,
                 isOpen: false,
                 message: "",
                 toastStatus: ""
-            }
-    
+            };
         default:
-            state
+            return state;
     }
-}
+};
 
-
-export const NotificationProvider=({children}:{children: ReactNode})=>{
-    const [state, dispatch] = useReducer(notificationReducer,initialState)
+// NotificationProvider component
+export const NotificationProvider = ({ children }: { children: ReactNode }) => {
+    const [state, dispatch] = useReducer(notificationReducer, initialState);
     return (
-        <NotificationContext.Provider value={{state, dispatch}}>
+        <NotificationContext.Provider value={{ state, dispatch }}>
             {children}
         </NotificationContext.Provider>
-    )
-}
-
-
-
+    );
+};

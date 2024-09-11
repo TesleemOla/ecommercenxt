@@ -7,7 +7,7 @@ const SnackBar = () => {
         state: { message, toastStatus, isOpen },
         dispatch,
     } = useNotification();
-  
+    
     const actions =  Actions(dispatch)
    
     
