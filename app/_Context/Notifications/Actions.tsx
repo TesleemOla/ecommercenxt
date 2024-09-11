@@ -1,4 +1,4 @@
-import { ACTIONS, notification } from "./NotificationContext"
+import { ACTIONS, Notification } from "./NotificationContext"
 
 
 
@@ -9,7 +9,7 @@ export const Actions = (dispatch: React.Dispatch<ACTIONS>)=>{
             type: "CLOSE"
         })
     }
-    const open = function ( message: string, toastStatus:notification['toastStatus']){
+    const open = function ( message: string, toastStatus:Notification['toastStatus']){
         dispatch({
             type: "OPEN",
             payload: {
