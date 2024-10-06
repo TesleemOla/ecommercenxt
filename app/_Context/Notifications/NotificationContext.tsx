@@ -1,3 +1,4 @@
+"use client"
 import { createContext, ReactNode, Dispatch, useReducer } from "react";
 
 // Define the notification type

@@ -1,6 +1,6 @@
 import React from "react";
-import { Actions } from "../_Context/Notifications/Actions";
-import useNotification from "../_Context/Notifications/useNotification";
+import { Actions } from "../../_Context/Notifications/Actions";
+import useNotification from "../../_Context/Notifications/useNotification";
 
 const SnackBar = () => {
     const {
