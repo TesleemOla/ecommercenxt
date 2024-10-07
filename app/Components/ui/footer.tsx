@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="p-4 bg-black text-white flex justify-between flex-col text-center items-center sm:flex-row sm:flex-wrap font-thin">
+        <footer className="py-4 px-8 items-center sm:items-start bg-black text-white flex justify-between flex-col text-center  sm:flex-row sm:flex-wrap font-thin">
             <section >
                 <ExLogo footer={true}/>
                 <Link href="#" className="first:font-bold">Subscribe</Link>
