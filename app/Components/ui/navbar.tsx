@@ -21,7 +21,7 @@ const Navbar = () => {
             <Link href="/about">About</Link>
             <Link href="/signup">Sign Up</Link>
         <div className="hidden sm:flex gap-5 w-1/2">
-              <div className="relative border-2 rounded-sm  bg-gray-300">
+              <div className="relative border-2 rounded-lg  bg-gray-300">
                 <input type="search" name="search" id="search" className="bg-gray-300 border-none outline-none" />
                 <div className="absolute right-0 top-0 text-white" >
                   <Search />
@@ -32,10 +32,10 @@ const Navbar = () => {
               <Cart />
             </div>
         </nav>
-      <nav className="flex flex-col items-end px-2 bg-white absolute right-1 top-2 sm:hidden transition-opacity" onClick={()=>setOpen(!open)}>
+      <nav className={`flex flex-col items-end px-2  absolute right-1 top-2 sm:hidden`} onClick={()=>setOpen(!open)}>
           <Burger open={open} />
-          {open && <>
-          <span className="grid">
+        <span className={`transition-[width] ease-in-out bg-white ${open ? "w-full opacity-100" : "w-0 opacity-0"}`}>
+          <span className="grid text-lg font-bold">
             <Link href="/">Home</Link>
             <Link href="/contact">Contact</Link>
             <Link href="/about">About</Link>
@@ -52,7 +52,7 @@ const Navbar = () => {
           <Love />
           <Cart />
           </span>
-          </>}
+          </span>
         </nav>
        
        

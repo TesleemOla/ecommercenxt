@@ -7,12 +7,16 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    transitionProperty:{
+      width: "width"
+    },
     extend: {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        
+        button: "#ea4335"
       },
+    
     },
   },
   plugins: [],
