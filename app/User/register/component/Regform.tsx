@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
-import { ActionFunction } from './Actions/RegisterAction'
+// import { ActionFunction } from './Actions/RegisterAction'
+import Link from 'next/link'
 
 
 export default function Regform () {
@@ -23,7 +24,8 @@ export default function Regform () {
             <label htmlFor="password" className="sm:hidden">Password</label>
               <input type="password" name="password" id="password" placeholder="Password" required className="p-2 sm:border-none sm:outline-none" />
         </div>
-        <button className="bg-button text-white w-full  py-2">Create Account</button>
+        <button className="bg-button text-white   py-2">Create Account</button>
+          <p className='font-bold text-sm my-4'>Already have an account? <Link href="#">LogIn</Link> your details below</p>
     </form>
   )
 }
