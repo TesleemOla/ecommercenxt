@@ -8,7 +8,7 @@ const Navbar = () => {
 
   const [open,setOpen] = useState(false)
   return (
-    <header className=" flex justify-between w-full py-2 px-4 shadow-2xl">
+    <header className=" flex py-2 px-4 shadow-2xl">
         <div className='pl-4'>
           <ExLogo />
         </div>
@@ -19,8 +19,8 @@ const Navbar = () => {
             <Link href="/">Home</Link>
             <Link href="/contact">Contact</Link>
             <Link href="/about">About</Link>
-            <Link href="/signup">Sign Up</Link>
-        <div className="hidden sm:flex gap-5 w-1/2">
+            <Link href="/User/register">Sign Up</Link>
+        <div className="flex gap-5 w-1/2">
               <div className="relative border-2 rounded-lg  bg-gray-300">
                 <input type="search" name="search" id="search" className="bg-gray-300 border-none outline-none" />
                 <div className="absolute right-0 top-0 text-white" >
@@ -34,12 +34,12 @@ const Navbar = () => {
         </nav>
       <nav className={`flex flex-col items-end px-2  absolute right-1 top-2 sm:hidden`} onClick={()=>setOpen(!open)}>
           <Burger open={open} />
-        <span className={`transition-[width] ease-in-out bg-white ${open ? "w-full opacity-100" : "w-0 opacity-0"}`}>
-          <span className="grid text-lg font-bold">
+        <span className={`transition-[width] ease-in-out bg-white ${open ? "w-1/2 opacity-100" : "w-0 opacity-0"}`}>
+          <span className="grid text-3xl font-bold gap-5">
             <Link href="/">Home</Link>
             <Link href="/contact">Contact</Link>
             <Link href="/about">About</Link>
-            <Link href="/signup">Sign Up</Link>
+            <Link href="/User/register">Sign Up</Link>
           </span>
           <span className="grid grid-cols-2">
           <span className="relative border-2 rounded-sm  bg-gray-300 col-span-2">
