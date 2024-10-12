@@ -24,8 +24,8 @@ export default function Regform () {
             <label htmlFor="password" className="sm:hidden">Password</label>
               <input type="password" name="password" id="password" placeholder="Password" required className="p-2 sm:border-none sm:outline-none" />
         </div>
-        <button className="bg-button text-white   py-2">Create Account</button>
-          <p className='font-bold text-sm my-4'>Already have an account? <Link href="#">LogIn</Link> your details below</p>
+        <button className="bg-button text-white rounded-lg p-2">Create Account</button>
+          <p className='font-semibold text-sm my-4'>Already have an account? <Link href="/User/login" className="text-purple-700">Login</Link> your details below</p>
     </form>
   )
 }
