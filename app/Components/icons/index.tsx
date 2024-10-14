@@ -5,6 +5,9 @@ import Search from "./search"
 import BtnArrow from "./btnArrow";
 import Socials from "./socials";
 import Burger from "./burger";
+import LeftArrow from "./leftArrow";
+import RightArrow from "./rightArrow";
+
 
 export {
     Cart,
@@ -13,5 +16,7 @@ export {
     Search,
     BtnArrow,
     Socials,
-    Burger
+    Burger,
+    LeftArrow,
+    RightArrow,
 }
