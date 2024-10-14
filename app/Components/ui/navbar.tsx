@@ -8,10 +8,10 @@ const Navbar = () => {
 
   const [open,setOpen] = useState(false)
   return (
-    <header className="flex p-4 shadow-2xl w-full justify-between">
-        <div className='pl-4'>
+    <header className="flex p-4 shadow-2xl w-full justify-between sticky top-0 z-10 bg-white">
+        <Link href="/" className='pl-4'>
           <ExLogo />
-        </div>
+        </Link>
         
           
         
