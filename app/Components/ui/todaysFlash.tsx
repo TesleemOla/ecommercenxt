@@ -2,10 +2,17 @@ import { LeftArrow, RightArrow } from "../icons";
 import HeaDing from "./heading";
 import RedDiv from "./redDiv";
 
-export default function TodayFlash() {
+export default async function TodayFlash() {
+    // const res = await fetch("/api/products",{
+    //     method: "GET"
+    // })
+
+    // const products = await res.json()
+    // console.log(products)
+
     return <div>
        <RedDiv />
-       <div className="flex justify-between">
+       <div className="flex flex-basis-1 sm:flex-basis-0 justify-between items-start">
        <div>
         <HeaDing item="Flash Sales" />
        </div>
@@ -24,9 +31,24 @@ export default function TodayFlash() {
         </span>
        </div>
        <div className="flex gap-5">
+        <span className="bg-gray-400 p-1 rounded-full">
         <LeftArrow/>
+        </span>
+        <span className="bg-gray-400 p-1 rounded-full">
         <RightArrow/>
+        </span>
        </div>
         </div>
+        <div>
+            {/* {
+                products.map(({id, name, price, avgRatings, noOfReviews, imgsrc })=>{
+                    return (
+                        <div key={id}>
+
+                        </div>
+                    )
+                })
+            } */}
+     </div>
     </div>
 }

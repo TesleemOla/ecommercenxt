@@ -44,8 +44,8 @@ export default function Footer() {
                 <Link href="#">Save $3 with app. New user only</Link>
                 <span className='grid grid-cols-2'>
                 <Image src="/images/Qr Code.jpg" alt="qr code" width={100} height={30} className="row-span-2"/>
-                <Image src="/images/AppStore.jpg" alt="appstore" width={120} height={50} />
-                <Image src="/images/GooglePlay.jpg" alt="googleplay" width={120} height={50} />
+                <Image src="/images/AppStore.jpg" alt="appstore" width={120} height={60} />
+                <Image src="/images/GooglePlay.jpg" alt="googleplay" width={120} height={60} />
                 </span>
                 
                 <Socials />
