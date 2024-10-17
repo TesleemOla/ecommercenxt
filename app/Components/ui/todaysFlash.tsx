@@ -3,12 +3,7 @@ import HeaDing from "./heading";
 import RedDiv from "./redDiv";
 
 export default async function TodayFlash() {
-    // const res = await fetch("/api/products",{
-    //     method: "GET"
-    // })
-
-    // const products = await res.json()
-    // console.log(products)
+    
 
     return <div>
        <RedDiv />
