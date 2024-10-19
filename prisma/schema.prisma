@@ -14,4 +14,58 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
-// generate 
+model User{
+  id String @id @default(uuid())
+  email String @unique 
+  password String
+  name String @db.VarChar(200)
+  isAdmin Boolean
+  Reviews Review[]
+  cart cart[]
+  wishlist wishlist[]
+}
+
+model Product{
+  id String @id @default(uuid())
+  name String @db.VarChar(60)
+  category String 
+  tags String[]
+  price Int
+  description String @db.VarChar(2000)
+  currentStock Int
+  reviews Review[]
+  avgReview Int
+  totalNoOfReviews Int
+  imaages String[]
+  sizes String
+
+}
+
+model Review{
+  id String @id @default(uuid())
+  reviewer User @relation(fields: [reviewerid], references: [id])
+  reviewerid String
+  comment String
+  stars String
+  Product Product[]
+}
+
+model cart{
+  id String @id @default(uuid())
+  user User @relation(fields: [userid], references: [id])
+  userid String
+}
+
+model wishlist{
+  id String @id @default(uuid())
+  user User @relation(fields: [userid], references: [id])
+  userid String
+}
+
+model Contact{
+  id String @id @default(uuid())
+  name String
+  email String
+  phoneNumber String
+  message String
+}
