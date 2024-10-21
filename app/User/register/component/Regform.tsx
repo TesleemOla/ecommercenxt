@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-// import { ActionFunction } from './Actions/RegisterAction'
+import { ActionFunction } from './Actions/RegisterAction'
 import Link from 'next/link'
 
 
@@ -9,7 +9,7 @@ export default function Regform () {
     
    
   return (
-    <form className="mx-auto my-4 sm:h-full space-y-5">
+    <form className="mx-auto my-4 sm:h-full space-y-5" action={ActionFunction}>
         <h1 className="font-semibold text-2xl ">Create an account</h1>
         <p className='font-bold text-sm'>Enter your details below</p>
         <div className="grid gap-1 my-2 sm:border-b-2 border-black">
