@@ -8,9 +8,14 @@ export async function ActionFunction(formData: FormData) {
     const password = formData.get("password") as string;
     if (name && password && username) {
         console.log({name,username,password})
+        try{
         const creater = await prisma.user.create({
             data: {name, password, email:username}})
         console.log(creater)
+        }
+        catch(err: any){
+            console.log(err?.message);
+        }
     } else {
         console.error("a value is missing")
     }
