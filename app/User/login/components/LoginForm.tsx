@@ -1,9 +1,28 @@
+"use client"
 import Link from 'next/link'
-import React from 'react'
+import {loginAction } from "../actions/loginAction"
+import Alert from '@/app/Components/ui/toast'
+import { useRef } from 'react'
+import { redirect } from 'next/navigation'
+
 
 const LoginForm = () => {
+  const formRef = useRef<HTMLFormElement>(null)
+
+  async function allAction(formData:FormData){
+ 
+      const {data } = await loginAction(formData)
+    if(data){
+      formRef.current?.reset()
+    Alert("Login successfull","success")
+    redirect("/")
+    }else{
+      Alert("Unable to Sign in. Please try again!", "info")
+    }
+   
+  }
   return (
-    <form className="sm:w-1/3 my-4">
+    <form className="sm:w-1/3 my-4" action={allAction} ref={formRef}>
           <h1 className="font-semibold text-2xl ">Login to Exclusive</h1>
           <p className='font-bold text-sm'>Enter your details below</p>
           <div className="grid gap-1 my-2 sm:border-b-2 border-black">
@@ -12,7 +31,7 @@ const LoginForm = () => {
           </div>
 
           <div className="grid gap-1 my-2 sm:border-b-2 border-black">
-              <label htmlFor="name" className="sm:hidden">Password</label>
+              <label htmlFor="password" className="sm:hidden">Password</label>
               <input type="password" name="password" id="password" placeholder="password" required className="p-2 sm:border-none sm:outline-none" />
           </div>
           <span className="flex gap-5 items-center">

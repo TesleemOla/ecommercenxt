@@ -1,22 +1,33 @@
 "use server"
 
-import prisma from "@/lib";
+// import prisma from "@/lib";
+import { supabase } from "@/utils/supabase/component"
+
 
 export async function ActionFunction(formData: FormData) {
     const name = formData.get("name") as string;
     const username = formData.get("username") as string;
     const password = formData.get("password") as string;
     if (name && password && username) {
-        console.log({name,username,password})
-        try{
-        const creater = await prisma.user.create({
-            data: {name, password, email:username}})
-        console.log(creater)
+        try{           
+            const { data, error } = await supabase.auth.signUp({
+                email: username,
+                password: password,
+                options: {
+                    data: {
+                        name: name 
+                    }
+                }
+            })
+            console.log(error)
+            return data? data: error?.message
+            
         }
-        catch(err: any){
-            console.log(err?.message);
+        catch(err){
+            console.log(err);
+            throw ("Error creating user. Please try again!")
         }
     } else {
-        console.error("a value is missing")
+        throw ("a value is missing")
     }
 }

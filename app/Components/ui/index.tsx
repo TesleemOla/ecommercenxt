@@ -1,16 +1,17 @@
 import Navbar from "./navbar";
-import SnackBar from "./snackBar"
 import Footer from "./footer";
 import Hero from "./Hero"
 import TodayFlash from "./todaysFlash";
 import RedDiv from "./redDiv";
+import UploadFile from "./uploadFile"
+import Heading from "./heading";
 
 export {
     Navbar,
-    SnackBar,
+    Heading,
     Footer,
     Hero,
     TodayFlash,
     RedDiv,
-
+    UploadFile
 }

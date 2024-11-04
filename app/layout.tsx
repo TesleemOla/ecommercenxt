@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import {Navbar} from "./Components/ui"
 import "./globals.css";
 import { Footer} from "./Components/ui";
+import { Toaster } from "sonner";
 
 
 const geistSans = localFont({
@@ -33,6 +34,7 @@ export default function RootLayout({
       >
 
         <Navbar />
+        <Toaster rich-colors position="top-right" />
         <main className="px-4">
         {children}
         </main>

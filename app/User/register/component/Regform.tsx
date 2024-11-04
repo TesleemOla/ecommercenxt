@@ -2,14 +2,25 @@
 import React from 'react'
 import { ActionFunction } from './Actions/RegisterAction'
 import Link from 'next/link'
+import { toast } from 'sonner'
+
 
 
 export default function Regform () {
 
-    
+    function clientAction(formData: FormData){
+      try{
+      const tryRegister = ActionFunction(formData)
+      toast.success(tryRegister)
+      }
+      catch(err){
+        toast.error(err?.message)
+      }
+
+    }
    
   return (
-    <form className="mx-auto my-4 sm:h-full space-y-5" action={ActionFunction}>
+    <form className="mx-auto my-4 sm:h-full space-y-5" action={clientAction}>
         <h1 className="font-semibold text-2xl ">Create an account</h1>
         <p className='font-bold text-sm'>Enter your details below</p>
         <div className="grid gap-1 my-2 sm:border-b-2 border-black">
