@@ -1,7 +1,7 @@
 "use server"
 
 // import prisma from "@/lib";
-import { supabase } from "@/utils/supabase/component"
+import { supabase } from "@/utils/supabase/client"
 
 
 export async function ActionFunction(formData: FormData) {

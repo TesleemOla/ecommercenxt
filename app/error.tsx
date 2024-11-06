@@ -1,11 +1,11 @@
 'use client'
 import Link from "next/link"
 
- // Error components must be Client Components
 
 
 
-export default function Error() {
+
+export default function MainError() {
   
 
     return (

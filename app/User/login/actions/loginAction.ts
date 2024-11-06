@@ -1,5 +1,5 @@
 "use server"
-import { supabase } from "@/utils/supabase/component";
+import { supabase } from "@/utils/supabase/client";
 
 export async function loginAction(formData: FormData){
     const email = formData.get("username") as string;
