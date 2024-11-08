@@ -10,7 +10,7 @@ export default function UploadFile(){
 
      async function uploadFn(formData: FormData){
         const image = formData.get("imagefile") as File
-    
+        
         // get file extension
         const fileExt = image?.name.split('.').pop()
 

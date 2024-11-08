@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import LoginForm from './components/LoginForm'
 
+
 const Page = () => {
   return (
         <main className="md:flex md:items-center sm:gap-10 mr-5">
