@@ -8,13 +8,13 @@ import { toast } from 'sonner'
 
 export default function Regform () {
 
-    function clientAction(formData: FormData){
+    async function clientAction(formData: FormData){
       try{
-      const tryRegister = ActionFunction(formData)
-      toast.success(tryRegister)
+      const tryRegister = await ActionFunction(formData)
+      tryRegister && toast.success("user created successfully")
       }
       catch(err){
-        toast.error(err?.message)
+        toast.error("error creating user")
       }
 
     }
