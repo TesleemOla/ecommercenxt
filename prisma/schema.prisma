@@ -6,13 +6,14 @@
 
 generator client {
   provider = "prisma-client-js"
-  previewFeatures = ["driverAdapters"]
+  previewFeatures = ["multiSchema"]
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
+  schemas = ["public", "auth"]
 }
 
 model User{
@@ -24,6 +25,7 @@ model User{
   Reviews Review[]
   cart cart[]
   wishlist wishlist[]
+  @@schema("auth")
 }
 
 model Product{
@@ -39,6 +41,7 @@ model Product{
   totalNoOfReviews Int
   images String[]
   sizes String
+  @@schema("auth")
 
 }
 
@@ -49,18 +52,21 @@ model Review{
   comment String
   stars String
   Product Product[]
+  @@schema("auth")
 }
 
 model cart{
   id String @id @default(uuid())
   user User @relation(fields: [userId], references: [id])
   userId String
+  @@schema("auth")
 }
 
 model wishlist{
   id String @id @default(uuid())
   user User @relation(fields: [userId], references: [id])
   userId String
+  @@schema("auth")
 }
 
 model Contact{
@@ -69,4 +75,5 @@ model Contact{
   email String
   phoneNumber String
   message String
+  @@schema("auth")
 }

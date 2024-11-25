@@ -1,11 +1,11 @@
 "use client"
 import { supabase } from "@/utils/supabase/client"
 import SubmitBtn from "./submitButton"
-import { useRef } from "react"
+// import { useRef } from "react"
 import Alert from "./toast"
 export default function UploadFile(){
 
-    const inputRef = useRef<HTMLInputElement>(null)
+    // const inputRef = useRef<HTMLInputElement>(null)
     
 
      async function uploadFn(formData: FormData){
@@ -19,22 +19,22 @@ export default function UploadFile(){
         .upload(`public/${image?.name}.${fileExt}`, image)
         if(error){
             console.error(error)
-            Alert("error uploading file. Please tyr again!","error")
+            Alert("error uploading file. Please try again!","error")
         }else{
             Alert("image upload successfull", "success")
         }
         
     }
 
-    function handleSelect(){
-        inputRef?.current?.click()
-    }
+    // function handleSelect(){
+    //     inputRef?.current?.click()
+    // }
 
     return (
         <>
-        <form action={uploadFn} className="flex flex-col">
-            <input type="file" name="imagefile" accept="image/*" ref={inputRef} className="hidden" />
-            <button onClick={handleSelect} className=" border-1 p-2 px-4 border-black" >Select File</button>
+            <form action={uploadFn} className="flex flex-col justify-center">
+            <input type="file" name="imagefile" accept="image/*"  />
+            {/* <button onClick={handleSelect} className=" border-1 p-2 px-4 border-black" >Select File</button> */}
             <SubmitBtn dataStr="Upload" />
         </form>
         </>
