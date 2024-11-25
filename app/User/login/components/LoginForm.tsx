@@ -10,15 +10,24 @@ const LoginForm = () => {
   const formRef = useRef<HTMLFormElement>(null)
 
   async function allAction(formData:FormData){
- 
-      const {data } = await loginAction(formData)
-    if(data){
+    const email = formData.get("username") as string;
+    const password = formData.get("password") as string;
+    const data = {email, password }
+
+    try{
+      const user   = await loginAction(data)
+      console.log(user)
+      if (user){
       formRef.current?.reset()
     Alert("Login successfull","success")
     redirect("/")
-    }else{
-      Alert("Unable to Sign in. Please try again!", "info")
+      }
     }
+      catch(err){
+        if (err instanceof Error){
+        Alert(err?.message , "info")
+        }
+      }
    
   }
   return (
