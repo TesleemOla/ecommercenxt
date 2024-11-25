@@ -11,7 +11,8 @@ export default function Regform () {
     async function clientAction(formData: FormData){
       try{
       const tryRegister = await ActionFunction(formData)
-      tryRegister && toast.success("user created successfully")
+      console.log(tryRegister)
+      // tryRegister && toast.success("user created successfully")
       }
       catch(err){
         toast.error("error creating user")
