@@ -2,7 +2,7 @@
 import React from 'react'
 import { ActionFunction } from './Actions/RegisterAction'
 import Link from 'next/link'
-import { toast } from 'sonner'
+import Alert from '@/app/Components/ui/toast'
 
 
 
@@ -12,10 +12,12 @@ export default function Regform () {
       try{
       const tryRegister = await ActionFunction(formData)
       console.log(tryRegister)
-      // tryRegister && toast.success("user created successfully")
+      
       }
       catch(err){
-        toast.error("error creating user")
+        if(err instanceof Error){
+          Alert(err?.message, "error")
+        }
       }
 
     }
@@ -37,7 +39,7 @@ export default function Regform () {
               <input type="password" name="password" id="password" placeholder="Password" required className="p-2 sm:border-none sm:outline-none" />
         </div>
         <button className="bg-button text-white rounded-lg p-2">Create Account</button>
-          <p className='font-semibold text-sm my-4'>Already have an account? <Link href="/User/login" className="text-purple-700">Login</Link> your details below</p>
+          <p className='font-semibold text-sm my-4'>Already have an account? <Link href="/login" className="text-purple-700">Login</Link> your details below</p>
     </form>
   )
 }

@@ -14,7 +14,8 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        button: "#ea4335"
+        button: "#ea4335",
+        drpbg: "rgba(0,0,0,0.4)"
       },
     
     },
