@@ -27,10 +27,10 @@ export default function Footer() {
             <section className="flex flex-col">
                 <Link href="#" className="first:font-bold first:text-base">Account</Link>
                 <Link href="#">My Account</Link>
-                <Link href="#">Login/Register</Link>
-                <Link href="#">Cart</Link>
-                <Link href="#">Wishlist</Link>
-                <Link href="#">Shop</Link>
+                <Link href="/login">Login</Link>
+                <Link href="/Register">Register</Link>
+                <Link href="/cart">Cart</Link>
+                <Link href="/">Shop</Link>
             </section>
             <section className="flex flex-col">
                 <Link href="#" className="first:font-bold first:text-base">Quick Link</Link>

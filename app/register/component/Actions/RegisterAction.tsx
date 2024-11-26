@@ -20,10 +20,11 @@ export async function ActionFunction(formData: FormData) {
                 }
             })
           
-            return data? data: error?.message
-            
-   
-    } else {
-        throw ("a value is missing")
-    }
+     if(error){
+        throw error
+     }
+     else{
+        return data
+     }
+}
 }
