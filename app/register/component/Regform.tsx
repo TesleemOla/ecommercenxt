@@ -39,7 +39,7 @@ export default function Regform () {
               <input type="password" name="password" id="password" placeholder="Password" required className="p-2 sm:border-none sm:outline-none" />
         </div>
         <button className="bg-button text-white rounded-lg p-2">Create Account</button>
-          <p className='font-semibold text-sm my-4'>Already have an account? <Link href="/User/login" className="text-purple-700">Login</Link> your details below</p>
+          <p className='font-semibold text-sm my-4'>Already have an account? <Link href="/login" className="text-purple-700">Login</Link> your details below</p>
     </form>
   )
 }

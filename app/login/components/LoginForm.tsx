@@ -47,6 +47,7 @@ const LoginForm = () => {
             <button className="bg-button text-white p-4 py-2 rounded-lg">Log In</button>
             <Link href="#">Forgot password?</Link>
           </span>
+      <Link href="/register" className="text-purple-700">Create an account</Link> instead
     </form>
   )
 }
