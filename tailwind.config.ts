@@ -15,7 +15,8 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         button: "#ea4335",
-        drpbg: "rgba(0,0,0,0.4)"
+        drpbg: "rgba(0,0,0,0.4)",
+        hovred: "#db4444"
       },
     
     },

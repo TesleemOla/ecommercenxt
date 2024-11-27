@@ -1,14 +1,14 @@
 import Link from "next/link";
-import CurrentPage from "../Components/ui/currentpage";
+import {CurrentPage} from "../Components/ui";
 
 export default function ContactPage() {
 
     return (
         <div>
-            <span className="flex">
+            <nav className="flex">
                 <Link href="/" className="opacity-50 font-extralight">Home</Link>
                 <CurrentPage />  
-            </span>
+            </nav>
         </div>
     )
 }

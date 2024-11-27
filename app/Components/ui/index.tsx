@@ -5,6 +5,7 @@ import TodayFlash from "./todaysFlash";
 import RedDiv from "./redDiv";
 import UploadFile from "./uploadFile"
 import Heading from "./heading";
+import CurrentPage from "./currentpage";
 
 export {
     Navbar,
@@ -13,5 +14,6 @@ export {
     Hero,
     TodayFlash,
     RedDiv,
-    UploadFile
+    UploadFile,
+    CurrentPage
 }
