@@ -16,12 +16,11 @@ const LoginForm = () => {
 
     try{
       const user   = await loginAction(data)
-      console.log(user)
       if (user){
       formRef.current?.reset()
-    Alert("Login successfull","success")
-    redirect("/")
-      }
+      Alert("Login successfull","success")
+      redirect("/")
+        }
     }
       catch(err){
         if (err instanceof Error){
@@ -47,7 +46,7 @@ const LoginForm = () => {
             <button className="bg-button text-white p-4 py-2 rounded-lg">Log In</button>
             <Link href="#">Forgot password?</Link>
           </span>
-      <Link href="/register" className="text-purple-700">Create an account</Link> instead
+      <Link href="/register" className="text-purple-700 text-sm">Create an account</Link> instead
     </form>
   )
 }

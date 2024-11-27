@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useRef } from 'react'
 import { ActionFunction } from './Actions/RegisterAction'
 import Link from 'next/link'
 import Alert from '@/app/Components/ui/toast'
@@ -8,10 +8,14 @@ import Alert from '@/app/Components/ui/toast'
 
 export default function Regform () {
 
+    const formRef = useRef<HTMLFormElement>(null)
     async function clientAction(formData: FormData){
       try{
       const tryRegister = await ActionFunction(formData)
-      console.log(tryRegister)
+      if(tryRegister?.user){
+        Alert("User registration successful", "success")
+        formRef?.current?.reset()
+      }
       
       }
       catch(err){
@@ -23,7 +27,7 @@ export default function Regform () {
     }
    
   return (
-    <form className="mx-auto my-4 sm:h-full space-y-5" action={clientAction}>
+    <form className="mx-auto my-4 sm:h-full space-y-5" action={clientAction} ref={formRef}>
         <h1 className="font-semibold text-2xl ">Create an account</h1>
         <p className='font-bold text-sm'>Enter your details below</p>
         <div className="grid gap-1 my-2 sm:border-b-2 border-black">
