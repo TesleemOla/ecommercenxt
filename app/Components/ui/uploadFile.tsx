@@ -31,12 +31,11 @@ export default function UploadFile(){
     // }
 
     return (
-        <>
-            <form action={uploadFn} className="flex flex-col justify-center">
+        <div className="w-1/4 text-center">
+            <form action={uploadFn} className="flex flex-col gap-5">
             <input type="file" name="imagefile" accept="image/*"  />
-            {/* <button onClick={handleSelect} className=" border-1 p-2 px-4 border-black" >Select File</button> */}
             <SubmitBtn dataStr="Upload" />
         </form>
-        </>
+        </div>
     )
 }
