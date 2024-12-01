@@ -11,11 +11,5 @@ export async function loginAction(userData: dataType){
       ...userData
     })
 
-    if(error){
-        throw error
-    }
-    else{
-        return data
-    }
-
+    return { data, error}
 }

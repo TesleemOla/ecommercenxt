@@ -8,7 +8,7 @@ import Burger from "./burger";
 import LeftArrow from "./leftArrow";
 import RightArrow from "./rightArrow";
 import Profile from "./profile";
-import {HomeStory, Sale, Dollar, ActiveCustomer} from "./ourstory";
+import {HomeStory, Sale, Dollar, ActiveCustomer, Delivery, CustomerServe, MoneyBack, } from "./ourstory";
 
 
 export {
@@ -25,5 +25,8 @@ export {
     HomeStory,
     Sale,
     Dollar,
-    ActiveCustomer
+    ActiveCustomer,
+    Delivery,
+    CustomerServe,
+    MoneyBack
 }
