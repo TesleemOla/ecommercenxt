@@ -14,19 +14,15 @@ const LoginForm = () => {
     const password = formData.get("password") as string;
     const data = {email, password }
 
-    try{
-      const user   = await loginAction(data)
+      const {error, data: user}   = await loginAction(data)
       if (user){
       formRef.current?.reset()
       Alert("Login successfull","success")
       redirect("/")
         }
-    }
-      catch(err){
-        if (err instanceof Error){
-        Alert(err?.message , "info")
+        else{
+          error && Alert(error?.message, "error")
         }
-      }
    
   }
   return (
