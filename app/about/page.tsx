@@ -43,6 +43,7 @@ export default function AboutPage() {
             icon: <MoneyBack />
         }
     ]
+
     return (
         <div className="mt-5">
             <nav className="flex">

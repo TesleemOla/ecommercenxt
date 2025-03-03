@@ -14,8 +14,7 @@ export default function UploadFile(){
         // get file extension
         const fileExt = image?.name.split('.').pop()
 
-        const { error } = await supabase.
-        storage.from("products")
+        const { error } = await supabase.storage.from("products")
         .upload(`public/${image?.name}.${fileExt}`, image)
         if(error){
             console.error(error)

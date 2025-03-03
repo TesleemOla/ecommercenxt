@@ -1,6 +1,5 @@
 "use server"
 
-// import prisma from "@/lib";
 import { supabase } from "@/utils/supabase/client"
 
 

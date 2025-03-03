@@ -1,9 +1,8 @@
 'use client'
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { supabase } from '@/utils/supabase/client'
 import { type User } from '@supabase/supabase-js'
 
-// ...
 
 export default function AccountForm({ user }: { user: User | null }) {
  
@@ -13,37 +12,38 @@ export default function AccountForm({ user }: { user: User | null }) {
     const [website, setWebsite] = useState<string | null>(null)
     const [avatar_url, setAvatarUrl] = useState<string | null>(null)
 
-    const getProfile = useCallback(async () => {
-        try {
-            setLoading(true)
+    
+    useEffect(() => {
+        const getProfile = async () => {
+          try {
+            setLoading(true);
 
             const { data, error, status } = await supabase
-                .from('profiles')
-                .select(`full_name, username, website, avatar_url`)
-                .eq('id', user?.id)
-                .single()
+              .from("profiles")
+              .select(`full_name, username, website, avatar_url`)
+              .eq("id", user?.id)
+              .single();
 
             if (error && status !== 406) {
-                console.log(error)
-                throw error
+              console.log(error);
+              throw error;
             }
 
             if (data) {
-                setFullname(data.full_name)
-                setUsername(data.username)
-                setWebsite(data.website)
-                setAvatarUrl(data.avatar_url)
+              setFullname(data.full_name);
+              setUsername(data.username);
+              setWebsite(data.website);
+              setAvatarUrl(data.avatar_url);
             }
-        } catch (error) {
-            alert('Error loading user data!')
-        } finally {
-            setLoading(false)
-        }
-    }, [user, supabase])
+          } catch (error) {
+            alert("Error loading user data!");
+          } finally {
+            setLoading(false);
+          }
+        };
 
-    useEffect(() => {
         getProfile()
-    }, [user, getProfile])
+    }, [user])
 
     async function updateProfile({
         username,
